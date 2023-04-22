@@ -2,6 +2,8 @@
 
 ## Description 
 
+A weather dashboard that will run in the browser and feature dyncamically updated HTML and CSS
+
 ## User-Story
 
 AS A traveler
@@ -23,4 +25,4 @@ THEN I am again presented with current and future conditions for that city
 ## Mock-up
 
 The following image shows the web application's appearance and functionality: 
-![alt text] (assets/images/06-server-side-apis-homework-demo.png)
+![](assets/images/06-server-side-apis-homework-demo.png)
