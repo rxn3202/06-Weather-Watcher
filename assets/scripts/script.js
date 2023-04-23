@@ -1,3 +1,4 @@
+// Current weather stored in an object for easier tracking
 var currentWeather = {
     name: "",
     date: "",
@@ -9,12 +10,16 @@ var currentWeather = {
     icon: ""
 }
 
+// Array for storing the forecast data as objects
 var forecast = [];
 
+// Array for storing previously searched cities
 var searchHistory = [];
 
+// OpenWeather API key
 var apiKey = "f74ffb79de2a139136c049a29d57f326";
 
+// QuerySelectors for various page elements
 var cityNameEl = document.querySelector("#name");
 var curDateEl = document.querySelector("#date");
 var curIconEl = document.querySelector("#icon");
@@ -32,6 +37,7 @@ var resultsContEl = document.querySelector("#results-container");
 var forecastContEl = document.querySelector("#forecast-container");
 var curStatsEl = document.querySelector("#current-stats");
 
+// Function for making API calls to OpenWeather
 var getWeather = function (city) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
     var lat = "";
@@ -141,7 +147,7 @@ var getForecast = function(city) {
       forecastEl.appendChild(cardContainerEl);
     }
   };
-
+// Displays the current weather data
 var displayWeather = function() {
     curStatsEl.style.display = "block";
     forecastContEl.style.display = "block";
@@ -154,6 +160,7 @@ var displayWeather = function() {
     uvCheck();
 };
 
+// Displays the search history in the history div element on the page
 var displayHistory = function() {
     historyEl.innerHTML = "";
     for (var i = 0; i < searchHistory.length; i++) {
@@ -164,11 +171,13 @@ var displayHistory = function() {
     }
 };
 
+// Loads the search history from localStorage into the searchHistory array and then calls displayHistory function
 var loadHistory = function() {
     searchHistory = JSON.parse(localStorage.getItem("history")) || [];
     displayHistory();
 };
 
+// Validates the input value from the form, and then calls the getWeather function with the searchCity value
 var formSubmitHandler = function(event) {
     event.preventDefault();
     var searchCity = searchInputEl.value.trim();
@@ -182,12 +191,14 @@ var formSubmitHandler = function(event) {
     }
 };
 
+// Clears the search history
 var clearHistory = function() {
     localStorage.removeItem("history");
     searchHistory = [];
     displayHistory();
 };
 
+// Checks the UV index from OpenWeather and sets the uvAlertEl text and color based on the index value
 var uvCheck = function() {
     if (currentWeather.uv === "error") {
         return;
@@ -215,11 +226,13 @@ var uvCheck = function() {
     uvAlertEl.classList.add(alertClass);
 };
 
+// Clears the forecast data from the page and empties the forecast array
 var clearForecast = function() {
     forecast = [];
     forecastEl.innerHTML = "";
 };
 
+// Allows the user to click on a city listed in the search history and search for that city
 var historyClickHandler = function(event) {
     var histCity = event.target.textContent;
     if (histCity) {
@@ -228,6 +241,8 @@ var historyClickHandler = function(event) {
     }
 };
 
+// This function clears the data in the results column, hiding the forecast card as well as the card-body of the current weather.
+// It also clears all date from the card header other than the name which may be used for other things like displaying error messages.
 var clearData = function () {
     console.log("inside clearData");
     curStatsEl.style.display = "none";
@@ -236,8 +251,10 @@ var clearData = function () {
     curIconEl.innerHTML = "";
 }
 
+// Load search history from local storage and display it on the page.
 loadHistory();
 
-formEl.addEventListener("submit", formSubmitHandler); 
-clearBtnEl.addEventListener("click", clearHistory); 
-historyEl.addEventListener("click", historyClickHandler); 
+// Add event listeners to form and buttons
+formEl.addEventListener("submit", formSubmitHandler); // Listener for form submission
+clearBtnEl.addEventListener("click", clearHistory); // Listener for clear history button
+historyEl.addEventListener("click", historyClickHandler); // Listener for clicking on a search history item
