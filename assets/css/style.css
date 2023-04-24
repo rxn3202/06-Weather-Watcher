@@ -1,3 +1,4 @@
+/* Additional styles for the header section */
 .header {
     background-color: black;
     color: white;
@@ -10,6 +11,7 @@
     font-weight: bold;
     }
     
+    /* Styling for cards */
     .card-header {
     display: flex;
     justify-content: space-between;
@@ -20,6 +22,7 @@
     margin-left: 25px;
     }
     
+    /* Styling for the history section */
     .history-item {
     border: thin solid lightslategray;
     margin-bottom: 3px;
@@ -31,15 +34,18 @@
     padding-left: 10px;
     }
     
+    /* Styling for form input */
     .form-input {
     border: thin solid lightslategray;
     outline: none;
     }
-
+    
+    /* Styling for forecast cards */
     .forecast-card {
     background-color: rgb(74, 180, 237);
     }
     
+    /* Hiding forecast and current stats by default */
     #forecast-container, #current-stats {
     display: none;
     }
