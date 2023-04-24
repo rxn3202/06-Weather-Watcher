@@ -1,0 +1,45 @@
+.header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    }
+    
+    .title {
+    font-size: 24px;
+    font-weight: bold;
+    }
+    
+    .card-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(217, 235, 244);
+    }
+    
+    .card-header .alert {
+    margin-left: 25px;
+    }
+    
+    .history-item {
+    border: thin solid lightslategray;
+    margin-bottom: 3px;
+    border-radius: 10px;
+    background-color: lightgray;
+    }
+    
+    .history-item h4 {
+    padding-left: 10px;
+    }
+    
+    .form-input {
+    border: thin solid lightslategray;
+    outline: none;
+    }
+
+    .forecast-card {
+    background-color: rgb(74, 180, 237);
+    }
+    
+    #forecast-container, #current-stats {
+    display: none;
+    }
