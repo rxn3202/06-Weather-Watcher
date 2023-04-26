@@ -1,51 +1,51 @@
 /* Additional styles for the header section */
 .header {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 15px;
+    background-color: black; /* Sets the background color of the header to black */
+    color: white; /* Sets the text color to white */
+    text-align: center; /* Centers the text within the header */
+    padding: 15px; /* Adds 15 pixels of padding to the header */
     }
     
     .title {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 24px; /* Sets the font size of the title to 24 pixels */
+    font-weight: bold; /* Makes the title text bold */
     }
     
     /* Styling for cards */
     .card-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(217, 235, 244);
+    display: flex; /* Uses flexbox to display the card header */
+    justify-content: space-between; /* Aligns the card header items to the left and right of the container */
+    background-color: rgb(217, 235, 244); /* Sets the background color of the card header */
     }
     
     .card-header .alert {
-    margin-left: 25px;
-    }
+    margin-left: 25px; /* Adds 25 pixels of margin to the left of the alert element within the card header */
+    } 
     
     /* Styling for the history section */
     .history-item {
-    border: thin solid lightslategray;
-    margin-bottom: 3px;
-    border-radius: 10px;
-    background-color: lightgray;
+    border: thin solid lightslategray; /* Sets a thin border with a color of lightslategray for each history item */
+    margin-bottom: 3px; /* Adds 3 pixels of margin to the bottom of each history item */
+    border-radius: 10px; /* Rounds the corners of each history item */
+    background-color: lightgray; /* Sets the background color of each history item to lightgray */
     }
     
     .history-item h4 {
-    padding-left: 10px;
+    padding-left: 10px; /* Adds 10 pixels of padding to the left of the h4 element within each history item */
     }
     
     /* Styling for form input */
     .form-input {
-    border: thin solid lightslategray;
-    outline: none;
+    border: thin solid lightslategray; /* Sets a thin border with a color of lightslategray for each form input */
+    outline: none; /* Removes the default outline around the form input when it is selected */
     }
     
     /* Styling for forecast cards */
     .forecast-card {
-    background-color: rgb(74, 180, 237);
+    background-color: rgb(74, 180, 237); /* Sets the background color of each forecast card */
     }
     
     /* Hiding forecast and current stats by default */
     #forecast-container, #current-stats {
-    display: none;
+    display: none; /* Sets the display property of the forecast-container and current-stats elements to none, hiding them by default */
     }
