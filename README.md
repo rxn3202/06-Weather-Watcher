@@ -23,6 +23,7 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
 ## Mock-up
+Please view live deployment: [Weather-Watcher](https://rxn3202.github.io/06-Weather-Watcher/)
 
 The following image shows the web application's appearance and functionality: 
 ![](assets/images/06-server-side-apis-homework-demo.png)
